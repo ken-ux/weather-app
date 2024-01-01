@@ -1,0 +1,18 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#weather-cards {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+#weather-cards > div {
+  flex: 1;
+  border: 1px solid red;
+}
