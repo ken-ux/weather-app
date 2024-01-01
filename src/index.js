@@ -21,7 +21,8 @@ async function getWeatherData(location, days) {
   }
 }
 
-function parseCurrentWeather(data) {
+async function parseCurrentWeather(location, days) {
+  const data = await getWeatherData(location, days);
   const obj = {};
   const fields = ["temp_f", "temp_c", "condition"];
 
@@ -36,7 +37,8 @@ function parseCurrentWeather(data) {
   console.log(obj);
 }
 
-function parseForecastWeather(data) {
+async function parseForecastWeather(location, days) {
+  const data = await getWeatherData(location, days);
   const obj = {};
 
   for (let i = 0; i < data.forecast.forecastday.length; i++) {
@@ -48,5 +50,5 @@ function parseForecastWeather(data) {
 }
 
 getWeatherData("london", 3).then((result) => console.log(result));
-getWeatherData("london", 3).then((data) => parseCurrentWeather(data));
-getWeatherData("london", 3).then((data) => parseForecastWeather(data));
+parseCurrentWeather("london", 3);
+parseForecastWeather("london", 3);
