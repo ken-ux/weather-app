@@ -1,9 +1,5 @@
 import { getWeatherData } from "./getWeatherData";
 
-const temp_f = document.querySelector("#temp_f");
-const temp_c = document.querySelector("#temp_c");
-const condition = document.querySelector("#condition");
-
 export async function parseCurrentWeather(location, days) {
   const data = await getWeatherData(location, days);
   const obj = {};
@@ -13,9 +9,18 @@ export async function parseCurrentWeather(location, days) {
     obj[fields[i]] = data.current[fields[i]];
   }
 
-  temp_f.textContent = obj.temp_f;
-  temp_c.textContent = obj.temp_c;
+  const tempF = document.createElement("p");
+  const tempC = document.createElement("p");
+  const condition = document.createElement("p");
+
+  tempF.textContent = obj.temp_f + "°F";
+  tempC.textContent = obj.temp_c + "°C";
   condition.textContent = obj.condition.text;
+
+  const currWeather = document.querySelector("#current-weather");
+  currWeather.appendChild(tempF);
+  currWeather.appendChild(tempC);
+  currWeather.appendChild(condition);
 
   return obj;
 }
