@@ -10,7 +10,7 @@ export async function parseForecastWeather(location, days) {
     obj[key].date = data.forecast.forecastday[i].date;
     obj[key].avgtemp_f = data.forecast.forecastday[i].day.avgtemp_f;
     obj[key].avgtemp_c = data.forecast.forecastday[i].day.avgtemp_c;
-    obj[key].condition = data.forecast.forecastday[i].day.condition.text;
+    obj[key].condition = data.forecast.forecastday[i].day.condition;
   }
 
   const weatherCards = document.querySelector("#weather-cards");
@@ -20,17 +20,20 @@ export async function parseForecastWeather(location, days) {
     const tempF = document.createElement("p");
     const tempC = document.createElement("p");
     const condition = document.createElement("p");
+    const icon = document.createElement("img");
 
     h2.textContent = obj[day].date;
     tempF.textContent = obj[day].avgtemp_f + "°F";
     tempC.textContent = obj[day].avgtemp_c + "°C";
-    condition.textContent = obj[day].condition;
+    condition.textContent = obj[day].condition.text;
+    icon.src = obj[day].condition.icon;
 
     weatherCards.appendChild(div);
     div.appendChild(h2);
     div.appendChild(tempF);
     div.appendChild(tempC);
     div.appendChild(condition);
+    div.appendChild(icon);
   }
 
   return obj;

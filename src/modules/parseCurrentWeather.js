@@ -12,15 +12,19 @@ export async function parseCurrentWeather(location, days) {
   const tempF = document.createElement("p");
   const tempC = document.createElement("p");
   const condition = document.createElement("p");
+  const icon = document.createElement("img");
+
 
   tempF.textContent = obj.temp_f + "°F";
   tempC.textContent = obj.temp_c + "°C";
   condition.textContent = obj.condition.text;
+  icon.src = obj.condition.icon;
 
   const currWeather = document.querySelector("#current-weather");
   currWeather.appendChild(tempF);
   currWeather.appendChild(tempC);
   currWeather.appendChild(condition);
+  currWeather.appendChild(icon);
 
   return obj;
 }
