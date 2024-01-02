@@ -2,7 +2,7 @@ import "./style.css";
 import { parseCurrentWeather } from "./modules/parseCurrentWeather";
 import { parseForecastWeather } from "./modules/parseForecastWeather";
 import { switchTemp } from "./modules/switchTemp";
-import { clearWeather } from "./modules/clearWeather";
+import { submitLocation } from "./modules/submitLocation";
 
 parseCurrentWeather("london", 3);
 parseForecastWeather("london", 3);
@@ -14,5 +14,5 @@ button.addEventListener("click", switchTemp);
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  clearWeather();
+  submitLocation();
 });
