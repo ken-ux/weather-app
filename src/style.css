@@ -4,6 +4,32 @@ body {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  background-color: aliceblue;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  font-weight: 700;
+}
+
+#container {
+  background-color: white;
+  padding: 80px;
+  border-radius: 50px;
+  margin-top: 10%;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 10%);
+}
+
+#switch-temp {
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 1.5rem;
 }
 
 #weather-cards {
@@ -14,7 +40,6 @@ body {
 
 #weather-cards > div {
   flex: 1;
-  border: 1px solid red;
 }
 
 .temp.shown {
@@ -23,4 +48,22 @@ body {
 
 .temp.hidden {
   display: none;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+form > button {
+  padding: 6px 16px;
+  border-radius: 8px;
+}
+
+form > input {
+  padding: 4px;
+  border-radius: 4px;
+  border-width: 1px;
 }
