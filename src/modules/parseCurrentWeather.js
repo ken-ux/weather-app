@@ -1,7 +1,9 @@
 import { getWeatherData } from "./getWeatherData";
+import { setLocationHeading } from "./setLocationHeading";
 
 export async function parseCurrentWeather(location, days) {
   const data = await getWeatherData(location, days);
+  setLocationHeading(data);
   const obj = {};
   const fields = ["temp_f", "temp_c", "condition"];
 
