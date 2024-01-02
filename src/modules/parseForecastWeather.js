@@ -1,4 +1,5 @@
 import { getWeatherData } from "./getWeatherData";
+import { format } from "date-fns";
 
 export async function parseForecastWeather(location, days) {
   const data = await getWeatherData(location, days);
@@ -7,7 +8,8 @@ export async function parseForecastWeather(location, days) {
   for (let i = 0; i < data.forecast.forecastday.length; i++) {
     const key = "day" + (i + 1);
     obj[key] = {};
-    obj[key].date = data.forecast.forecastday[i].date;
+    const dateString = data.forecast.forecastday[i].date;
+    obj[key].date = format(dateString.replace(/-/g, "/"), "EEEE");
     obj[key].avgtemp_f = data.forecast.forecastday[i].day.avgtemp_f;
     obj[key].avgtemp_c = data.forecast.forecastday[i].day.avgtemp_c;
     obj[key].condition = data.forecast.forecastday[i].day.condition;
