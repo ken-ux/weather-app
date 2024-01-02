@@ -42,6 +42,15 @@ button {
   flex: 1;
 }
 
+#weather-cards > div > p:last-of-type {
+  color: grey;
+}
+
+.temp {
+  color: cornflowerblue;
+  font-weight: 700;
+}
+
 .temp.shown {
   display: block;
 }
