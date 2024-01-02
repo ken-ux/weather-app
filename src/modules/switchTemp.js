@@ -1,6 +1,6 @@
 export function switchTemp() {
   const button = document.querySelector("#switch-temp");
-  if (button.textContent === "Change to C") {
+  if (button.textContent === "Change to °C") {
     button.textContent = "Change to °F";
   } else {
     button.textContent = "Change to °C";
