@@ -10,10 +10,11 @@ export async function parseCurrentWeather(location, days) {
   }
 
   const tempF = document.createElement("p");
+  tempF.classList = "temp shown";
   const tempC = document.createElement("p");
+  tempC.classList = "temp hidden";
   const condition = document.createElement("p");
   const icon = document.createElement("img");
-
 
   tempF.textContent = obj.temp_f + "°F";
   tempC.textContent = obj.temp_c + "°C";

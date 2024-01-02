@@ -18,7 +18,9 @@ export async function parseForecastWeather(location, days) {
     const div = document.createElement("div");
     const h2 = document.createElement("h2");
     const tempF = document.createElement("p");
+    tempF.classList = "temp shown";
     const tempC = document.createElement("p");
+    tempC.classList = "temp hidden";
     const condition = document.createElement("p");
     const icon = document.createElement("img");
 

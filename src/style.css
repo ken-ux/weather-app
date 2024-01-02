@@ -16,3 +16,11 @@ body {
   flex: 1;
   border: 1px solid red;
 }
+
+.temp.shown {
+  display: block;
+}
+
+.temp.hidden {
+  display: none;
+}
